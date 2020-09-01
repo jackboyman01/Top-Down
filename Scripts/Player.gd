@@ -25,6 +25,7 @@ func apply_friction(amount):
 	else:
 		motion = Vector2.ZERO
 
+# warning-ignore:shadowed_variable
 func apply_movement(acceleration):
 	motion += acceleration
 	#$AnimationPlayer.play("Run")
