@@ -33,8 +33,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Top Down"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Menu/Main Menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
