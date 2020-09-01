@@ -16,6 +16,7 @@ func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("ui_right")) -  int(Input.is_action_pressed("ui_left"))
 	axis.y = int(Input.is_action_pressed("ui_down")) -  int(Input.is_action_pressed("ui_up"))
+	#$AnimationPlayer.play("Idle")
 	return axis.normalized()
 
 func apply_friction(amount):
@@ -26,4 +27,5 @@ func apply_friction(amount):
 
 func apply_movement(acceleration):
 	motion += acceleration
+	#$AnimationPlayer.play("Run")
 	motion = motion.clamped(max_speed)
