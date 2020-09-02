@@ -13,8 +13,9 @@ position = Vector2( 529.765, 294.314 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, 2.5199 )
 scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 896, 160, 896, 544, 352, 416, 96, 288, 128, 96, 736, 32, 895.96, 159.869, 1024, 64 )
+polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 896, 160, 896, 544, 352, 416, 96, 288, 128, 96, 303.691, 77.5062, 736, 32, 895.96, 159.869, 1024, 64 )
 
 [node name="FadeIn" parent="." instance=ExtResource( 3 )]
 visible = false

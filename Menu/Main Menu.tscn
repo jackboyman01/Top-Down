@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 800, 460 )
+position = Vector2( 796.825, 460 )
 texture = ExtResource( 2 )
 offset = Vector2( 160, 80 )
 

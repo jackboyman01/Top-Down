@@ -11,10 +11,6 @@ func _physics_process(delta):
 	else:
 		apply_movement(axis * acceleration * delta)
 	motion = move_and_slide(motion)
-	if get_slide_count() > 0:
-		var collision = get_slide_collision(0)
-		if collision != null:
-			punkte=punkte+1
 func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.y = int(Input.is_action_pressed("down")) -  int(Input.is_action_pressed("up"))
