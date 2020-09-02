@@ -3,8 +3,10 @@ extends KinematicBody2D
 var max_speed = 600
 var acceleration = 3000
 var motion = Vector2()
+var mouse_postion
 
 func _physics_process(delta):
+	look_at_cursor()
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
 		apply_friction(acceleration*delta)
@@ -30,3 +32,7 @@ func apply_movement(acceleration):
 	motion += acceleration
 	#$AnimationPlayer.play("Run")
 	motion = motion.clamped(max_speed)
+	
+func look_at_cursor():
+	mouse_postion = get_local_mouse_position()
+	rotation +=  mouse_postion.angle()
