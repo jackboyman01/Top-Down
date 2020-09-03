@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 		if collision != null:
 			speed+=100
 			direction = direction.bounce(collision.normal) # do ball bounceal)
+			#get_node(ball).get(punkte) += 5 Punkte hinzufügen
 	if get_position()<Vector2(-860,20000):
 		speed=0
 	

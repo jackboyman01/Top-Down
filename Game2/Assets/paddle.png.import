@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bh3wmjaz.bmp-c858ea02c1dd639c523542a8d6543a91.stex"
+path="res://.import/paddle.png-e6e37b0e610081b5ad47eca710a0b086.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bh3wmjaz.bmp"
-dest_files=[ "res://.import/bh3wmjaz.bmp-c858ea02c1dd639c523542a8d6543a91.stex" ]
+source_file="res://Game2/Assets/paddle.png"
+dest_files=[ "res://.import/paddle.png-e6e37b0e610081b5ad47eca710a0b086.stex" ]
 
 [params]
 

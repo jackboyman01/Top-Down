@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Button.wav-1bd271618a0975ee90d448295f9364bd.sample"
+path="res://.import/Button.wav-3a3165573941ad800336d376013d6015.sample"
 
 [deps]
 
-source_file="res://Sound/Button.wav"
-dest_files=[ "res://.import/Button.wav-1bd271618a0975ee90d448295f9364bd.sample" ]
+source_file="res://Menu/Sound/Button.wav"
+dest_files=[ "res://.import/Button.wav-3a3165573941ad800336d376013d6015.sample" ]
 
 [params]
 
