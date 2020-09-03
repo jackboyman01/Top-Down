@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game2/Assets/paddle.png" type="Texture" id=1]
 [ext_resource path="res://Game2/Assets/ball.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Game2/Scripts/ball.gd" type="Script" id=4]
 [ext_resource path="res://Game2/Assets/Background.png" type="Texture" id=5]
 [ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Game2/Scene/World.gd" type="Script" id=7]
+[ext_resource path="res://Game2/Sounds/Ball.wav" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.0671
@@ -29,7 +31,11 @@ extents = Vector2( 79.1675, 22.2168 )
 size = 46
 font_data = ExtResource( 6 )
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1920.0
@@ -49,6 +55,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 
 [node name="hitbox" type="CollisionShape2D" parent="ball"]
+visible = false
 position = Vector2( 891.67, 419.371 )
 shape = SubResource( 1 )
 
@@ -95,10 +102,10 @@ rotation = 1.5708
 shape = SubResource( 6 )
 
 [node name="Score" type="Label" parent="."]
-margin_left = 1700.0
-margin_top = 20.0
-margin_right = 1744.0
-margin_bottom = 34.0
+margin_left = 23.0403
+margin_top = 22.2449
+margin_right = 163.04
+margin_bottom = 74.2449
 size_flags_horizontal = 3
 size_flags_vertical = 5
 size_flags_stretch_ratio = 1.08
