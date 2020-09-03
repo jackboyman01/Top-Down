@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Menu/Sound/Button.wav" type="AudioStream" id=1]
-[ext_resource path="res://Menu/UISound.gd" type="Script" id=2]
+[ext_resource path="res://Menu/Sound/UISound.gd" type="Script" id=2]
+
 
 
 [node name="UISound" type="Node"]

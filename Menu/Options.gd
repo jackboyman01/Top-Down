@@ -11,7 +11,7 @@ func _on_CheckBox_pressed():
 
 func _on_FadeIn_fade_finished():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Menu/Main Menu.tscn")
+	get_tree().change_scene("res://Menu/Main Menu/Main Menu.tscn")
 
 func _ready():
 	set_process(true)

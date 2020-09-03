@@ -1,13 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Menu/Main Menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Menu/Main Menu/Main Menu.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu/Options.gd" type="Script" id=2]
 [ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=3]
-[ext_resource path="res://Menu/background.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Main Menu/background.png" type="Texture" id=4]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Menu/UISound.tscn" type="PackedScene" id=6]
-
-
+[ext_resource path="res://Menu/Sound/UISound.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -29,9 +27,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="background" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
+[node name="background" type="TextureRect" parent="."]
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0

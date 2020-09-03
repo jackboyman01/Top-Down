@@ -16,7 +16,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene_to_load = "res://Scenes/LevelOne.tscn"
+scene_to_load = "res://Menu/Game Select/Game Select.tscn"
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0

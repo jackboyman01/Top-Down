@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Game1/Scenes/World.gd" type="Script" id=1]
+[ext_resource path="res://Game1/Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game1/Mini Scenes/Player.tscn" type="PackedScene" id=3]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
