@@ -1,22 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game1/Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game1/Mini Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 4 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 529.765, 294.314 )
+[node name="Points_Counter" type="Label" parent="."]
+margin_left = 207.733
+margin_top = 98.3726
+margin_right = 349.733
+margin_bottom = 150.373
+custom_fonts/font = SubResource( 1 )
+text = "Points:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Player" parent="." groups=[
+"player",
+] instance=ExtResource( 3 )]
+position = Vector2( 458.031, 322.63 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Wall" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 0, 2.5199 )
 scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 896, 160, 896, 544, 352, 416, 96, 288, 128, 96, 303.691, 77.5062, 736, 32, 895.96, 159.869, 1024, 64 )
+polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 955.43, 42.3959, 961.376, 538.295, 38.5519, 539.484, 37.3626, 239.804, 39.9764, 24.0719, 308.809, 26.0548, 736, 32, 956.62, 41.2067, 1024, 64 )
 
 [node name="FadeIn" parent="." instance=ExtResource( 2 )]
 visible = false
+
+[node name="Points" type="Timer" parent="."]
+autostart = true
+
+[node name="Enemy_Spawner" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
+[connection signal="timeout" from="Enemy_Spawner" to="." method="_on_Timer_timeout"]
