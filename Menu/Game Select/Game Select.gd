@@ -20,5 +20,6 @@ func _on_FadeIn_fade_finished():
 
 func _process(_delta):
 	if Input.is_action_pressed("key_exit"):
-		$UISound.play()
-		get_tree().quit()
+		scene_path_to_load = "res://Menu/Main Menu/Main Menu.tscn"
+		$FadeIn.show()
+		$FadeIn.fade_in()
