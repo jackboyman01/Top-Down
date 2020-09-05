@@ -2,6 +2,7 @@ extends Node2D
 
 var points = 0
 
+
 func _process(_delta):
 	get_node("Points_Counter").set_text("Score: " + str(points))
 	if Input.is_action_pressed("key_exit"):
@@ -21,10 +22,19 @@ func spawn_enemy():
 	var enemy = enemyscene.instance()
 # warning-ignore:unused_variable
 	add_child(enemy)
-	enemy.transform  = $Enemy_Spawner.global_transform
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var x = rng.randi_range(0,2)+1
+	match x:
+		1:
+			enemy.transform  = $Enemy_Spawner/Enemy_Spawner1.global_transform
+		2:
+			enemy.transform  = $Enemy_Spawner/Enemy_Spawner2.global_transform
+		3:
+			enemy.transform  = $Enemy_Spawner/Enemy_Spawner3.global_transform
 
 func _on_Timer_timeout():
 	spawn_enemy()
 
 func _on_Points_timeout():
-	points += 5
+	points += 10

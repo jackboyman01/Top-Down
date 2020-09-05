@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 signal enemy_hit
 
-var max_speed = 300
+var max_speed = 400
 var motion = Vector2()
 onready var obj = get_parent().get_node("Player")
 

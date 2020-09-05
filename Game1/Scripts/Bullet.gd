@@ -1,12 +1,11 @@
 extends Area2D
 
 var velocity = Vector2()
-var speed = 750
+var speed = 2000
 var shoot = false
 
 func _ready():
-	print("Shooting projectile")
-	velocity.x = +600
+	velocity.x = +500
 
 # warning-ignore:unused_argument
 func _physics_process(delta):

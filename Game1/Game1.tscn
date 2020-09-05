@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game1/Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game1/Mini Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Game1/Assets/Background.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 46
@@ -12,17 +13,25 @@ font_data = ExtResource( 4 )
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1921.0
+margin_bottom = 1081.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." groups=[
 "player",
 ] instance=ExtResource( 3 )]
-position = Vector2( 458.031, 322.63 )
+position = Vector2( 322.461, 298.846 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="Wall" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 0, 2.5199 )
 scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 955.43, 42.3959, 961.376, 538.295, 38.5519, 539.484, 37.3626, 239.804, 39.9764, 24.0719, 308.809, 26.0548, 736, 32, 956.62, 41.2067, 1024, 64 )
+polygon = PoolVector2Array( 959.451, -0.392248, 0, 0, 3.45575, 539.931, 958.389, 538.741, 960.119, 44.9923, 940.764, 20.2978, 941.74, 516.146, 20.1046, 517.336, 19.7142, 17.9306, 940.43, 19.2966, 959.785, 44.6586 )
 
 [node name="FadeIn" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -39,14 +48,22 @@ __meta__ = {
 }
 
 [node name="Points" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="Enemy_Timer" type="Timer" parent="."]
-wait_time = 4.0
 autostart = true
 
 [node name="Enemy_Spawner" type="Node2D" parent="."]
-position = Vector2( 1186.85, 708.076 )
+position = Vector2( 1857.95, 884.318 )
+
+[node name="Enemy_Spawner1" type="Node2D" parent="Enemy_Spawner"]
+position = Vector2( 14, -746 )
+
+[node name="Enemy_Spawner2" type="Node2D" parent="Enemy_Spawner"]
+position = Vector2( 6, -390 )
+
+[node name="Enemy_Spawner3" type="Node2D" parent="Enemy_Spawner"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Timer_timeout"]
