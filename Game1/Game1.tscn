@@ -12,17 +12,6 @@ font_data = ExtResource( 4 )
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Points_Counter" type="Label" parent="."]
-margin_left = 207.733
-margin_top = 98.3726
-margin_right = 349.733
-margin_bottom = 150.373
-custom_fonts/font = SubResource( 1 )
-text = "Points:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player" parent="." groups=[
 "player",
 ] instance=ExtResource( 3 )]
@@ -38,12 +27,26 @@ polygon = PoolVector2Array( 1024, 0, 0, 0, 0, 608, 1024, 608, 1024, 64, 955.43, 
 [node name="FadeIn" parent="." instance=ExtResource( 2 )]
 visible = false
 
+[node name="Points_Counter" type="Label" parent="."]
+margin_left = 207.733
+margin_top = 98.3726
+margin_right = 349.733
+margin_bottom = 150.373
+custom_fonts/font = SubResource( 1 )
+text = "Points:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Points" type="Timer" parent="."]
 autostart = true
 
-[node name="Enemy_Spawner" type="Timer" parent="."]
+[node name="Enemy_Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="Enemy_Spawner" type="Node2D" parent="."]
+position = Vector2( 1186.85, 708.076 )
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
-[connection signal="timeout" from="Enemy_Spawner" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Timer" to="." method="_on_Timer_timeout"]

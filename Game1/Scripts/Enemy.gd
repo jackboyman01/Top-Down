@@ -8,6 +8,7 @@ onready var obj = get_parent().get_node("Player")
 
 func _physics_process(delta):
 	var dir = (obj.global_position - global_position).normalized()
+	rotation = dir.angle()
 # warning-ignore:return_value_discarded
 	move_and_collide(dir * max_speed * delta)
 

@@ -17,18 +17,11 @@ func _on_Enemy_enemy_hit():
 	get_tree().reload_current_scene()
 
 func spawn_enemy():
-	var rand = RandomNumberGenerator.new()
 	var enemyscene = load("res://Game1/Mini Scenes/Enemy.tscn")
-	var screen_size = get_viewport().get_visible_rect().size
 	var enemy = enemyscene.instance()
-	rand.randomize()
-	var x = rand.randf_range(0,screen_size.x)
-	rand.randomize()
-	var y = rand.randf_range(0,screen_size.y)
-	enemy.position.y = y
-	enemy.position.x = x
+# warning-ignore:unused_variable
 	add_child(enemy)
-
+	enemy.transform  = $Enemy_Spawner.global_transform
 
 func _on_Timer_timeout():
 	spawn_enemy()

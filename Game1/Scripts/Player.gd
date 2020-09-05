@@ -4,9 +4,13 @@ var max_speed = 600
 var acceleration = 3000
 var motion = Vector2()
 var mouse_postion
+var shoot = false
+export (PackedScene) var Bullet
 
 func _physics_process(delta):
 	look_at_cursor()
+	if Input.is_action_pressed("left_click"):
+		spawn_bullet()
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
 		apply_friction(acceleration*delta)
@@ -36,3 +40,16 @@ func apply_movement(acceleration):
 func look_at_cursor():
 	mouse_postion = get_local_mouse_position()
 	rotation +=  mouse_postion.angle()
+
+func spawn_bullet():
+	if shoot == true:
+		var bulletscene = load("res://Game1/Mini Scenes/Bullet.tscn")
+	# warning-ignore:unused_variable
+		var bullet = bulletscene.instance()
+		#bullet.pos = ($Bullet_Spawner.position)
+		owner.add_child(bullet)
+		bullet.transform = $Bullet_Spawner.global_transform
+		shoot = false
+
+func _on_Bullet_Timer_timeout():
+	shoot = true
