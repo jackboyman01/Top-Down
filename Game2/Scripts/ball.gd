@@ -28,5 +28,5 @@ func _process(delta: float) -> void:
 func _ready():
 	   randomize()
 	   # start with random direction beetween -1 and 1
-	   direction.x = rand_range(-1, 1)
+	   direction.x = rand_range(3, 1)
 	   direction.y = rand_range(-1, 1)

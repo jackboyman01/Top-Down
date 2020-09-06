@@ -11,7 +11,7 @@
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 35.0671
+radius = 41.8958
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 992.937, 12.2589 )
@@ -26,7 +26,7 @@ extents = Vector2( 112.246, 3.44589 )
 extents = Vector2( 91.3684, 5.41582 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 76.4813, 21.9261 )
+extents = Vector2( 76.2385, 20.9974 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 46
@@ -55,8 +55,10 @@ position = Vector2( 895.64, 415.622 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 
-[node name="hitbox" type="CollisionShape2D" parent="ball"]
-position = Vector2( 891.67, 419.371 )
+[node name="hitbox" type="CollisionShape2D" parent="ball" groups=[
+"col",
+]]
+position = Vector2( 895.034, 414.326 )
 shape = SubResource( 1 )
 
 [node name="Wand" type="StaticBody2D" parent="."]
@@ -64,12 +66,12 @@ position = Vector2( 743.548, 2.07019 )
 
 [node name="Wand1" type="CollisionShape2D" parent="Wand"]
 visible = false
-position = Vector2( 210.893, 1084.62 )
+position = Vector2( 213.138, 1098.09 )
 shape = SubResource( 2 )
 
 [node name="Wand2" type="CollisionShape2D" parent="Wand"]
 visible = false
-position = Vector2( 203.3, 7.84583 )
+position = Vector2( 203.3, -16.8483 )
 shape = SubResource( 3 )
 
 [node name="Wand3" type="CollisionShape2D" parent="Wand"]
