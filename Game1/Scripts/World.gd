@@ -2,9 +2,10 @@ extends Node2D
 
 var points = 0
 
-
 func _process(_delta):
 	get_node("Points_Counter").set_text("Score: " + str(points))
+	if points > SaveHighscore.read_savegame():
+		SaveHighscore.save(points)
 	if Input.is_action_pressed("key_exit"):
 		$FadeIn.show()
 		$FadeIn.fade_in()

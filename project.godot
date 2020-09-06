@@ -19,6 +19,10 @@ config/name="Top Down"
 run/main_scene="res://Menu/Main Menu/Main Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SaveHighscore="*res://Game1/Scripts/Save_Highscore.gd"
+
 [display]
 
 window/size/width=1920

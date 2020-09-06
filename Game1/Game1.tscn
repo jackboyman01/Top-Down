@@ -1,12 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game1/Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game1/Mini Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://Game1/Assets/Background.png" type="Texture" id=5]
+[ext_resource path="res://Game1/Scripts/Highscore.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 46
 font_data = ExtResource( 4 )
 
@@ -42,7 +47,7 @@ margin_top = 98.3726
 margin_right = 349.733
 margin_bottom = 150.373
 custom_fonts/font = SubResource( 1 )
-text = "Points:"
+text = "Points: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,6 +58,19 @@ autostart = true
 
 [node name="Enemy_Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Highscore" type="Node2D" parent="."]
+position = Vector2( 1075.73, 102.373 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Highscore"]
+margin_right = 247.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 2 )
+text = "Highscore:  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Enemy_Spawner" type="Node2D" parent="."]
 position = Vector2( 1857.95, 884.318 )
