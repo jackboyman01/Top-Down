@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Menu/Game Select/Game Select.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Buttons/Game1.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menu/Buttons/Back.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Menu/Sound/UISound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menu/Buttons/Game3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Menu/Main Menu/background.png" type="Texture" id=11]
 
 [node name="Game Select" type="Control"]
@@ -40,14 +41,14 @@ align = 1
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 59.0
 margin_right = 1680.0
-margin_bottom = 247.0
+margin_bottom = 311.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 360.0
-margin_bottom = 188.0
+margin_bottom = 252.0
 
 [node name="Game1" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
 margin_right = 360.0
@@ -60,10 +61,16 @@ margin_right = 360.0
 margin_bottom = 124.0
 scene_to_load = "res://Game2/Game2.tscn"
 
-[node name="Back" parent="Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
+[node name="Game3" parent="Menu/CenterRow/Buttons" instance=ExtResource( 8 )]
 margin_top = 128.0
 margin_right = 360.0
 margin_bottom = 188.0
+scene_to_load = "res://Game3/Game3.tscn"
+
+[node name="Back" parent="Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
+margin_top = 192.0
+margin_right = 360.0
+margin_bottom = 252.0
 scene_to_load = "res://Menu/Main Menu/Main Menu.tscn"
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
