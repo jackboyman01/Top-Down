@@ -6,6 +6,7 @@ var shoot = false
 
 func _ready():
 	velocity.x = +500
+	$AudioStreamPlayer.play()
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
