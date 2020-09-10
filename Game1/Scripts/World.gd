@@ -25,7 +25,7 @@ func spawn_enemy():
 	add_child(enemy)
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var x = rng.randi_range(0,2)+1
+	var x = rng.randi_range(0,3)+1
 	match x:
 		1:
 			enemy.transform  = $Enemy_Spawner/Enemy_Spawner1.global_transform
@@ -33,6 +33,8 @@ func spawn_enemy():
 			enemy.transform  = $Enemy_Spawner/Enemy_Spawner2.global_transform
 		3:
 			enemy.transform  = $Enemy_Spawner/Enemy_Spawner3.global_transform
+		4:
+			enemy.transform  = $Enemy_Spawner/Enemy_Spawner4.global_transform
 
 func _on_Timer_timeout():
 	spawn_enemy()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game1/Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://Game1/Assets/Background.png" type="Texture" id=5]
 [ext_resource path="res://Game1/Scripts/Highscore.gd" type="Script" id=6]
+[ext_resource path="res://Game1/Mini Scenes/Walls.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 46
@@ -19,8 +20,9 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 1921.0
-margin_bottom = 1081.0
+margin_left = -10.6787
+margin_right = 7669.32
+margin_bottom = 4320.0
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,7 +31,7 @@ __meta__ = {
 [node name="Player" parent="." groups=[
 "player",
 ] instance=ExtResource( 3 )]
-position = Vector2( 322.461, 298.846 )
+position = Vector2( 2955.98, 2227.14 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -37,6 +39,27 @@ position = Vector2( 322.461, 298.846 )
 position = Vector2( 0, 2.5199 )
 scale = Vector2( 2, 2 )
 polygon = PoolVector2Array( 0, 0, -0.888168, 2157.69, 3840.1, 2158.09, 3839.28, -0.600297, 3.98016, -1.04437, 50.0686, 48.3994, 3789.25, 47.7513, 3789.18, 2109.45, 50.8369, 2108.64, 49.498, 52.3054 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 1400, 900 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 3840, 900 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 6280, 900 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 1400, 3400 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 3840, 3400 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 6280, 3400 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 3840, 2160 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -82,13 +105,18 @@ autostart = true
 position = Vector2( 1857.95, 884.318 )
 
 [node name="Enemy_Spawner1" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 4279.03, 1460.51 )
+position = Vector2( 5500, -500 )
 
 [node name="Enemy_Spawner2" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 2064.51, 2825.59 )
+position = Vector2( 5500, 3000 )
 
 [node name="Enemy_Spawner3" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( -322.905, 1641.43 )
+position = Vector2( -1500, 3000 )
+rotation = 0.0305252
+
+[node name="Enemy_Spawner4" type="Node2D" parent="Enemy_Spawner"]
+position = Vector2( -1500, -500 )
+rotation = 0.0305252
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Timer_timeout"]
