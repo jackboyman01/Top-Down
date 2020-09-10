@@ -28,4 +28,7 @@ position = Vector2( 50, 0 )
 
 [node name="Bullet_Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 [connection signal="timeout" from="Bullet_Timer" to="." method="_on_Bullet_Timer_timeout"]

@@ -36,21 +36,40 @@ position = Vector2( 322.461, 298.846 )
 [node name="Wall" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 0, 2.5199 )
 scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 959.451, -0.392248, 0, 0, 3.45575, 539.931, 958.389, 538.741, 960.119, 44.9923, 940.764, 20.2978, 941.74, 516.146, 20.1046, 517.336, 19.7142, 17.9306, 940.43, 19.2966, 959.785, 44.6586 )
+polygon = PoolVector2Array( 0, 0, -0.888168, 2157.69, 3840.1, 2158.09, 3839.28, -0.600297, 3.98016, -1.04437, 50.0686, 48.3994, 3789.25, 47.7513, 3789.18, 2109.45, 50.8369, 2108.64, 49.498, 52.3054 )
 
-[node name="FadeIn" parent="." instance=ExtResource( 2 )]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Points_Counter" type="Label" parent="."]
+[node name="Points_Counter" type="Label" parent="CanvasLayer"]
 margin_left = 207.733
 margin_top = 98.3726
-margin_right = 349.733
+margin_right = 362.733
 margin_bottom = 150.373
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "Points: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Highscore" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 1075.73, 102.373 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Highscore"]
+margin_right = 247.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Highscore:  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeIn" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="Points" type="Timer" parent="."]
 wait_time = 0.5
@@ -59,29 +78,17 @@ autostart = true
 [node name="Enemy_Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Highscore" type="Node2D" parent="."]
-position = Vector2( 1075.73, 102.373 )
-script = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="Highscore"]
-margin_right = 247.0
-margin_bottom = 52.0
-custom_fonts/font = SubResource( 2 )
-text = "Highscore:  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Enemy_Spawner" type="Node2D" parent="."]
 position = Vector2( 1857.95, 884.318 )
 
 [node name="Enemy_Spawner1" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 14, -746 )
+position = Vector2( 4279.03, 1460.51 )
 
 [node name="Enemy_Spawner2" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 6, -390 )
+position = Vector2( 2064.51, 2825.59 )
 
 [node name="Enemy_Spawner3" type="Node2D" parent="Enemy_Spawner"]
+position = Vector2( -322.905, 1641.43 )
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Timer_timeout"]
