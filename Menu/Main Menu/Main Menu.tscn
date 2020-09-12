@@ -40,20 +40,20 @@ __meta__ = {
 
 [node name="Logo" type="TextureRect" parent="Menu"]
 margin_right = 1680.0
-margin_bottom = 128.0
+margin_bottom = 130.0
 texture = ExtResource( 3 )
 stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 132.0
+margin_top = 134.0
 margin_right = 1680.0
-margin_bottom = 524.0
+margin_bottom = 525.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 838.0
-margin_bottom = 392.0
+margin_bottom = 391.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -74,18 +74,18 @@ custom_fonts/font = ExtResource( 7 )
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 842.0
 margin_right = 1680.0
-margin_bottom = 392.0
+margin_bottom = 391.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Characters" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
 margin_left = 419.0
-margin_top = 196.0
+margin_top = 195.0
 margin_right = 419.0
-margin_bottom = 196.0
+margin_bottom = 195.0
 
 [node name="VersionLabel" type="Label" parent="Menu"]
-margin_top = 528.0
+margin_top = 529.0
 margin_right = 1680.0
 margin_bottom = 920.0
 size_flags_horizontal = 3
