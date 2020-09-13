@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-var max_speed = 600
-var acceleration = 3000
+export var max_speed = 600
+export var acceleration = 3000
 var motion = Vector2()
 var mouse_postion
 var shoot = false
-export (PackedScene) var Bullet
+var Bullet
 
 func _physics_process(delta):
 	look_at_cursor()

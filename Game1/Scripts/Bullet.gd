@@ -1,7 +1,7 @@
 extends Area2D
 
 var velocity = Vector2()
-var speed = 2000
+export var speed = 2500
 var shoot = false
 
 func _ready():

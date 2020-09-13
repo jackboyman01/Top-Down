@@ -7,8 +7,8 @@ func _process(_delta):
 	if points > SaveHighscore.read_savegame():
 		SaveHighscore.save(points)
 	if Input.is_action_pressed("key_exit"):
-		$FadeIn.show()
-		$FadeIn.fade_in()
+		$CanvasLayer/FadeIn.show()
+		$CanvasLayer/FadeIn.fade_in()
 
 func _on_FadeIn_fade_finished():
 # warning-ignore:return_value_discarded
