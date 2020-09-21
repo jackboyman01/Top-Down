@@ -31,9 +31,16 @@ __meta__ = {
 [node name="Player" parent="." groups=[
 "player",
 ] instance=ExtResource( 3 )]
-position = Vector2( 2955.98, 2227.14 )
+position = Vector2( 989.426, 3825.53 )
+
+[node name="Camera" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2( -12.2043, -0.979698 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 0, 2.5199 )
@@ -41,25 +48,17 @@ scale = Vector2( 2, 2 )
 polygon = PoolVector2Array( 0, 0, -0.888168, 2157.69, 3840.1, 2158.09, 3839.28, -0.600297, 3.98016, -1.04437, 50.0686, 48.3994, 3789.25, 47.7513, 3789.18, 2109.45, 50.8369, 2108.64, 49.498, 52.3054 )
 
 [node name="Wall2" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 1400, 900 )
+position = Vector2( 1395.89, 3827.04 )
+scale = Vector2( 0.1, 1 )
 
 [node name="Wall3" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 3840, 900 )
+position = Vector2( 959.056, 3467.55 )
+rotation = -1.5708
+scale = Vector2( 0.1, 1 )
 
 [node name="Wall4" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 6280, 900 )
-
-[node name="Wall5" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 1400, 3400 )
-
-[node name="Wall6" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 3840, 3400 )
-
-[node name="Wall7" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 6280, 3400 )
-
-[node name="Wall8" parent="Walls" instance=ExtResource( 7 )]
-position = Vector2( 3840, 2160 )
+position = Vector2( 598.502, 3705.48 )
+scale = Vector2( 0.1, 0.5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,28 +94,11 @@ __meta__ = {
 visible = false
 
 [node name="Points" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="Enemy_Timer" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
-
-[node name="Enemy_Spawner" type="Node2D" parent="."]
-position = Vector2( 1857.95, 884.318 )
-
-[node name="Enemy_Spawner1" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 5500, -500 )
-
-[node name="Enemy_Spawner2" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( 5500, 3000 )
-
-[node name="Enemy_Spawner3" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( -1500, 3000 )
-rotation = 0.0305252
-
-[node name="Enemy_Spawner4" type="Node2D" parent="Enemy_Spawner"]
-position = Vector2( -1500, -500 )
-rotation = 0.0305252
 [connection signal="fade_finished" from="CanvasLayer/FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="timeout" from="Points" to="." method="_on_Points_timeout"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Timer_timeout"]

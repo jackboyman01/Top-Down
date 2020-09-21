@@ -21,20 +21,14 @@ func _on_Enemy_enemy_hit():
 func spawn_enemy():
 	var enemyscene = load("res://Game1/Mini Scenes/Enemy.tscn")
 	var enemy = enemyscene.instance()
-# warning-ignore:unused_variable
+	var rand = RandomNumberGenerator.new()
+	var screenpos = $Player/Camera.get_camera_position()
+	var y = rand.randf_range(0, screenpos.y)
+	rand.randomize()
+	var x = rand.randf_range(0, screenpos.x)
+	enemy.position.y = y
+	enemy.position.x = x
 	add_child(enemy)
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var x = rng.randi_range(0,3)+1
-	match x:
-		1:
-			enemy.transform  = $Enemy_Spawner/Enemy_Spawner1.global_transform
-		2:
-			enemy.transform  = $Enemy_Spawner/Enemy_Spawner2.global_transform
-		3:
-			enemy.transform  = $Enemy_Spawner/Enemy_Spawner3.global_transform
-		4:
-			enemy.transform  = $Enemy_Spawner/Enemy_Spawner4.global_transform
 
 func _on_Timer_timeout():
 	spawn_enemy()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Enemy.png-295fccc14f86a4f730231f783eff8c35.stex"
+path="res://.import/ghost-Sheet.png-32fb907bf4ac61e1fcc00f069419b161.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game1/Assets/Enemy.png"
-dest_files=[ "res://.import/Enemy.png-295fccc14f86a4f730231f783eff8c35.stex" ]
+source_file="res://Game1/Assets/ghost-Sheet.png"
+dest_files=[ "res://.import/ghost-Sheet.png-32fb907bf4ac61e1fcc00f069419b161.stex" ]
 
 [params]
 

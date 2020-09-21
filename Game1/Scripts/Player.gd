@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var max_speed = 600
+export var max_speed = 200
 export var acceleration = 3000
 var motion = Vector2()
 var mouse_postion
@@ -34,6 +34,7 @@ func apply_friction(amount):
 # warning-ignore:shadowed_variable
 func apply_movement(acceleration):
 	motion += acceleration
+	$AnimationPlayer.play("Run")
 	#$AnimationPlayer.play("Run")
 	motion = motion.clamped(max_speed)
 	

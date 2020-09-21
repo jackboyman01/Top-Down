@@ -3,7 +3,7 @@
 [ext_resource path="res://Game1/Assets/Wall.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 400.344, 398.943 )
+extents = Vector2( 399.641, 399.99 )
 
 [node name="Wall" type="StaticBody2D"]
 

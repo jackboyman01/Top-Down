@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 signal enemy_hit
 
-var max_speed = 400
-var motion = Vector2()
+var max_speed = 100
 onready var obj = get_parent().get_node("Player")
 
 func _physics_process(delta):
 	var dir = (obj.global_position - global_position).normalized()
 	rotation = dir.angle()
 # warning-ignore:return_value_discarded
+	$AnimationPlayer.play("Run")
 	move_and_collide(dir * max_speed * delta)
 
 func _ready():
